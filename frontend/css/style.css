@@ -1,0 +1,194 @@
+root {
+  --azul: #0d3b47;
+  --cinza-txt: #ccc;
+  --chip-bg: #EEF2F4;
+  --chip-bd: #E0E6EA;
+  --range-fill: #B8C3CC;
+  --range-track: #E6EBEE;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background: var(--azul);
+  color: var(--azul);
+}
+
+/* Topbar */
+.topbar {
+  background: var(--azul);
+  color: #fff;
+  padding: 14px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-img { height: 50px; } /* logo maior */
+.right { display: flex; align-items: center; gap: 14px; }
+.icon { height: 24px; }
+.avatar {
+  height: 40px; width: 40px; border-radius: 50%;
+  background: #fff; padding: 2px;
+}
+.user { font-size: 12px; text-align: right; line-height: 1.1; }
+
+/* Linha branca abaixo da topbar */
+.linha {
+  height: 1px;
+  background: #fff;
+  opacity: 0.3;
+}
+
+/* Header azul */
+.page-header {
+  background: var(--azul);
+  padding: 20px 40px;
+}
+.page-header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  max-width: 920px; /* alinha com o card */
+  margin: 0 auto;
+}
+.page-header-content h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+.page-header-content p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #e0e6ea;
+}
+.icon-back {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+/* Conteúdo */
+.container { display: flex; justify-content: center; padding: 28px 16px; }
+.card {
+  background: #fff; width: min(920px, 100%);
+  border-radius: 18px; padding: 38px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.2);
+  margin-top: -10px; /* encosta logo abaixo da header azul */
+}
+.card h3 {
+  text-align: center; /* centraliza "Informações Básicas" */
+  margin: 0 0 22px;
+  font-weight: 700; font-size: 24px;
+  color: var(--azul);
+}
+
+/* Campos */
+.campo { margin-bottom: 22px; }
+label { display: block; font-weight: 600; margin-bottom: 10px; }
+
+.grid-2 {
+  display: grid; gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Inputs com ícone */
+.input-icon {
+  display: flex; align-items: center; gap: 10px;
+  background: #f7f7f7; border: 1px solid #ddd;
+  border-radius: 12px; padding: 10px 12px;
+}
+.input-icon img { width: 22px; opacity: .7; }
+.input-icon input {
+  flex: 1; border: none; background: transparent; outline: none;
+  font-size: 15px; color: #2b2b2b;
+}
+
+/* Botão + */
+.add-row { gap: 10px; }
+.icon-btn {
+  width: 36px; height: 36px; border: none; border-radius: 999px;
+  background: var(--azul); color: #fff; font-size: 20px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--chip-bg); border: 1px solid var(--chip-bd);
+  border-radius: 999px; padding: 6px 12px;
+  font-weight: 500; color: var(--azul);
+}
+.chip .remove {
+  border: none;
+  background: transparent;
+  color: #7a8a94;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Range estilizado */
+input[type="range"] {
+  width: 100%; height: 10px; border-radius: 8px; outline: none;
+  -webkit-appearance: none; background: var(--range-track);
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--azul); cursor: pointer; border: none;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--azul); cursor: pointer; border: none;
+}
+.orcamento-valor { margin-top: 8px; font-weight: 700; color: #4a5861; }
+
+/* Botão Próximo */
+.acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.proximo-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #E4E4E4;
+  color: #0f3a45; /* Azul escuro */
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  padding: 0px 0px 0px 5px;
+  font-weight: 800;
+  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  width: 150px;
+}
+
+.proximo-btn span {
+  flex: 1;
+  text-align: center;
+}
+
+.circulo {
+  background: #0f3a45;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circulo img {
+  width: 22px;
+  height: 22px;
+  transform: rotate(180deg); /* Rotaciona a seta */
+  filter: brightness(0) invert(1); /* deixa a seta branca */
+}
